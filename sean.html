@@ -1,21 +1,22 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
-  
-  
-  
+
+
+
 
   <title>網站</title>
 
     <link rel="canonical" href="https://codepen.io/Sean0223/pen/pvzoVZv">
-  
-  
-  
-  
+
+
+
+
 <style>
 /* 全局樣式 */
 body {
@@ -172,9 +173,9 @@ form button:hover {
 }
 </style>
 
-  
-  
-  
+
+
+
 </head>
 
 <body>
@@ -195,7 +196,7 @@ form button:hover {
             <option value="en">English</option>
         </select>
     </header>
-    
+
     <nav>
         <div class="button-container">
             <button class="nav-button" id="homeButton" onclick="loadPage('home')">首頁</button>
@@ -210,20 +211,20 @@ form button:hover {
     </main>
 
     <footer>
-        <p>&copy; 2024 謝翔安 | 專屬網頁</p>
+        <p>&copy; 2024 sean | 專屬網頁</p>
     </footer>
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-  
+
       <script id="rendered-js" >
 // 切換夜間模式
 function toggleNightMode() {
     // 切換夜間模式樣式
     document.body.classList.toggle('night-mode');
-    
+
     // 根據當前模式更新按鈕文字
     const nightModeButton = document.getElementById('nightModeButton');
     if (document.body.classList.contains('night-mode')) {
@@ -247,7 +248,7 @@ window.onload = function() {
 // 更改語言
 function changeLanguage(selectElement) {
     const language = selectElement.value;
-    
+
     // 更新語言顯示內容
     if (language === 'en') {
         document.getElementById('homeButton').innerText = 'Home';
@@ -255,7 +256,7 @@ function changeLanguage(selectElement) {
         document.getElementById('contactButton').innerText = 'Contact';
         document.getElementById('questionButton').innerText = 'Ask a Question';
         document.getElementById('nightModeButton').innerText = 'Toggle Night Mode';
-        
+
         pages.home = `
             <h2>Hello!</h2>
             <p>I am Sean, welcome to my personal website where you can explore my interests and works.</p>
@@ -280,13 +281,13 @@ function changeLanguage(selectElement) {
             <form id="questionForm">
                 <label for="userName">Your Name:</label>
                 <input type="text" id="userName" name="from_name" required>
-                
+
                 <label for="userEmail">Your Email:</label>
                 <input type="email" id="userEmail" name="from_email" required>
-                
+
                 <label for="userQuestion">Your Question:</label>
                 <textarea id="userQuestion" name="message" rows="5" required></textarea>
-                
+
                 <button type="submit">Submit Question</button>
             </form>
             <div id="formStatus" style="display: none;"></div>
@@ -301,10 +302,10 @@ function changeLanguage(selectElement) {
         document.getElementById('contactButton').innerText = '聯絡方式';
         document.getElementById('questionButton').innerText = '提問';
         document.getElementById('nightModeButton').innerText = '切換夜間模式';
-        
+
         pages.home = `
             <h2>你好！</h2>
-            <p>我是謝翔安，這是我的專屬網站，歡迎你來探索我的興趣與作品。</p>
+            <p>我是sean，這是我的專屬網站，歡迎你來探索我的興趣與作品。</p>
         `;
         pages.about = `
             <h2>我的資訊</h2>
@@ -326,13 +327,13 @@ function changeLanguage(selectElement) {
             <form id="questionForm">
                 <label for="userName">你的名字：</label>
                 <input type="text" id="userName" name="from_name" required>
-                
+
                 <label for="userEmail">你的電子郵件：</label>
                 <input type="email" id="userEmail" name="from_email" required>
-                
+
                 <label for="userQuestion">你的提問：</label>
                 <textarea id="userQuestion" name="message" rows="5" required></textarea>
-                
+
                 <button type="submit">送出提問</button>
             </form>
             <div id="formStatus" style="display: none;"></div>
@@ -349,7 +350,7 @@ function changeLanguage(selectElement) {
 const pages = {
     home: `
         <h2>你好！</h2>
-        <p>我是謝翔安，這是我的專屬網站，歡迎你來探索我的興趣與作品。</p>
+        <p>我是sean，這是我的專屬網站，歡迎你來探索我的興趣與作品。</p>
     `,
     about: `
         <h2>我的資訊</h2>
@@ -371,13 +372,13 @@ const pages = {
         <form id="questionForm">
             <label for="userName">你的名字：</label>
             <input type="text" id="userName" name="from_name" required>
-            
+
             <label for="userEmail">你的電子郵件：</label>
             <input type="email" id="userEmail" name="from_email" required>
-            
+
             <label for="userQuestion">你的提問：</label>
             <textarea id="userQuestion" name="message" rows="5" required></textarea>
-            
+
             <button type="submit">送出提問</button>
         </form>
         <div id="formStatus" style="display: none;"></div>
@@ -400,10 +401,10 @@ function loadPage(page) {
 
     if (page === 'question') {
         const form = document.getElementById('questionForm');
-        
+
         form.addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             const formStatus = document.getElementById('formStatus');
             formStatus.style.display = 'block';
             formStatus.innerHTML = '正在提交您的問題...';
@@ -419,7 +420,7 @@ function loadPage(page) {
 }
     </script>
 
-  
+
 </body>
 
 </html>
