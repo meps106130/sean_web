@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+  
+  
+
+  <title>網站</title>
+
+    <link rel="canonical" href="https://codepen.io/Sean0223/pen/pvzoVZv">
+  
+  
+  
+  
+<style>
+/* 全局樣式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 夜間模式樣式 */
+body.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* 夜間模式下的標題 */
+body.night-mode header {
+    background-color: #1e1e1e;
+    color: #00ff6c;
+}
+
+/* 夜間模式下的按鈕 */
+body.night-mode .nav-button {
+    background-color: #00ff6c;
+    color: white;
+}
+
+body.night-mode .nav-button:hover {
+    background-color: #00cc57;
+}
+
+body.night-mode footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.night-mode form input, body.night-mode form textarea {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+/* 語言選單的背景顏色在夜間模式下 */
+body.night-mode #languageSelect {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body.night-mode #languageSelect option {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body.night-mode #languageSelect option:hover {
+    background-color: #00cc57;
+    color: white;
+}
+
+/* 頁首 */
+header {
+    background-color: #1e1e1e;
+    color: #00ff6c;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* 導航 */
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-button {
+    padding: 10px 20px;
+    background-color: #00ff6c;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #00cc57;
+}
+
+/* 主體內容 */
+main {
+    padding: 20px;
+}
+
+main h2 {
+    color: #00ff6c;
+}
+
+ul {
+    line-height: 1.8;
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 表單樣式 */
+form {
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+form button {
+    background-color: #00ff6c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #00cc57;
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body>
+  <html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sean的專屬網頁</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="flashingTitle">sean的專屬網頁</h1>
+        <p>探索我的世界：編程、遊戲與創意</p>
+        <button id="nightModeButton" onclick="toggleNightMode()">切換夜間模式</button>
+        <select id="languageSelect" onchange="changeLanguage(this)">
+            <option value="zh-Hant">繁體中文</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+    
+    <nav>
+        <div class="button-container">
+            <button class="nav-button" id="homeButton" onclick="loadPage('home')">首頁</button>
+            <button class="nav-button" id="aboutButton" onclick="loadPage('about')">我的資訊</button>
+            <button class="nav-button" id="contactButton" onclick="loadPage('contact')">聯絡方式</button>
+            <button class="nav-button" id="questionButton" onclick="loadPage('question')">提問</button>
+        </div>
+    </nav>
+
+    <main id="mainContent">
+        <p>請選擇上方的選項來瀏覽我的網站內容。</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 謝翔安 | 專屬網頁</p>
+    </footer>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+  
+      <script id="rendered-js" >
+// 切換夜間模式
+function toggleNightMode() {
+    // 切換夜間模式樣式
+    document.body.classList.toggle('night-mode');
+    
+    // 根據當前模式更新按鈕文字
+    const nightModeButton = document.getElementById('nightModeButton');
+    if (document.body.classList.contains('night-mode')) {
+        nightModeButton.innerText = '切換白日模式';
+    } else {
+        nightModeButton.innerText = '切換夜間模式';
+    }
+}
+
+// 初始化時檢查模式並設定按鈕文字
+window.onload = function() {
+    const nightModeButton = document.getElementById('nightModeButton');
+    if (document.body.classList.contains('night-mode')) {
+        nightModeButton.innerText = '切換白日模式';
+    } else {
+        nightModeButton.innerText = '切換夜間模式';
+    }
+};
+
+
+// 更改語言
+function changeLanguage(selectElement) {
+    const language = selectElement.value;
+    
+    // 更新語言顯示內容
+    if (language === 'en') {
+        document.getElementById('homeButton').innerText = 'Home';
+        document.getElementById('aboutButton').innerText = 'About Me';
+        document.getElementById('contactButton').innerText = 'Contact';
+        document.getElementById('questionButton').innerText = 'Ask a Question';
+        document.getElementById('nightModeButton').innerText = 'Toggle Night Mode';
+        
+        pages.home = `
+            <h2>Hello!</h2>
+            <p>I am Sean, welcome to my personal website where you can explore my interests and works.</p>
+        `;
+        pages.about = `
+            <h2>About Me</h2>
+            <ul>
+                <li><strong>Interests:</strong> Programming, Reading, Gaming</li>
+                <li><strong>Birthday:</strong> February 23, 2011</li>
+                <li><strong>Programming Languages:</strong> Python, C, C++, HTML, CSS, JavaScript (not very good)</li>
+            </ul>
+        `;
+        pages.contact = `
+            <h2>Contact Me</h2>
+            <ul>
+                <li><strong>Gmail:</strong><a href="mailto:seanhsieh0223@gmail.com">seanhsieh0223@gmail.com</a></li>
+                <li><strong>Discord:</strong> seanhsieh0223@gmail.com</li>
+            </ul>
+        `;
+        pages.question = `
+            <h2>Ask a Question</h2>
+            <form id="questionForm">
+                <label for="userName">Your Name:</label>
+                <input type="text" id="userName" name="from_name" required>
+                
+                <label for="userEmail">Your Email:</label>
+                <input type="email" id="userEmail" name="from_email" required>
+                
+                <label for="userQuestion">Your Question:</label>
+                <textarea id="userQuestion" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Submit Question</button>
+            </form>
+            <div id="formStatus" style="display: none;"></div>
+        `;
+        pages.thankYou = `
+            <h2>Thank You for Your Question!</h2>
+            <p>We have received your question and will respond as soon as possible.</p>
+        `;
+    } else {
+        document.getElementById('homeButton').innerText = '首頁';
+        document.getElementById('aboutButton').innerText = '關於我';
+        document.getElementById('contactButton').innerText = '聯絡方式';
+        document.getElementById('questionButton').innerText = '提問';
+        document.getElementById('nightModeButton').innerText = '切換夜間模式';
+        
+        pages.home = `
+            <h2>你好！</h2>
+            <p>我是謝翔安，這是我的專屬網站，歡迎你來探索我的興趣與作品。</p>
+        `;
+        pages.about = `
+            <h2>我的資訊</h2>
+            <ul>
+                <li><strong>興趣：</strong>寫程式、看書</li>
+                <li><strong>生日：</strong>2011年2月23日</li>
+                <li><strong>會寫的程式語言：</strong>Python、C、C++、HTML、CSS、JavaScript（不太厲害）</li>
+            </ul>
+        `;
+        pages.contact = `
+            <h2>如何聯絡我</h2>
+            <ul>
+                <li><strong>Gmail：</strong><a href="mailto:seanhsieh0223@gmail.com">seanhsieh0223@gmail.com</a></li>
+                <li><strong>Discord：</strong>seanhsieh0223@gmail.com</li>
+            </ul>
+        `;
+        pages.question = `
+            <h2>留下你的問題</h2>
+            <form id="questionForm">
+                <label for="userName">你的名字：</label>
+                <input type="text" id="userName" name="from_name" required>
+                
+                <label for="userEmail">你的電子郵件：</label>
+                <input type="email" id="userEmail" name="from_email" required>
+                
+                <label for="userQuestion">你的提問：</label>
+                <textarea id="userQuestion" name="message" rows="5" required></textarea>
+                
+                <button type="submit">送出提問</button>
+            </form>
+            <div id="formStatus" style="display: none;"></div>
+        `;
+        pages.thankYou = `
+            <h2>感謝您的提問！</h2>
+            <p>我們已經收到您的問題，我會盡快回覆。</p>
+        `;
+    }
+    loadPage('home');
+}
+
+// 頁面內容
+const pages = {
+    home: `
+        <h2>你好！</h2>
+        <p>我是謝翔安，這是我的專屬網站，歡迎你來探索我的興趣與作品。</p>
+    `,
+    about: `
+        <h2>我的資訊</h2>
+        <ul>
+            <li><strong>興趣：</strong>寫程式、看書、打遊戲</li>
+            <li><strong>生日：</strong>2011年2月23日</li>
+            <li><strong>會寫的程式語言：</strong>Python、C、C++、HTML、CSS、JavaScript（不太厲害）</li>
+        </ul>
+    `,
+    contact: `
+        <h2>如何聯絡我</h2>
+        <ul>
+            <li><strong>Gmail：</strong><a href="mailto:seanhsieh0223@gmail.com">seanhsieh0223@gmail.com</a></li>
+            <li><strong>Discord：</strong>seanhsieh0223@gmail.com</li>
+        </ul>
+    `,
+    question: `
+        <h2>留下你的問題</h2>
+        <form id="questionForm">
+            <label for="userName">你的名字：</label>
+            <input type="text" id="userName" name="from_name" required>
+            
+            <label for="userEmail">你的電子郵件：</label>
+            <input type="email" id="userEmail" name="from_email" required>
+            
+            <label for="userQuestion">你的提問：</label>
+            <textarea id="userQuestion" name="message" rows="5" required></textarea>
+            
+            <button type="submit">送出提問</button>
+        </form>
+        <div id="formStatus" style="display: none;"></div>
+    `,
+    thankYou: `
+        <h2>感謝您的提問！</h2>
+        <p>我們已經收到您的問題，我會盡快回覆。</p>
+    `
+};
+
+// 初始化 EmailJS
+(function() {
+    emailjs.init('EKv9vDoRS816xS0Yb');
+})();
+
+// 根據按鈕切換頁面
+function loadPage(page) {
+    const mainContent = document.getElementById('mainContent');
+    mainContent.innerHTML = pages[page];
+
+    if (page === 'question') {
+        const form = document.getElementById('questionForm');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const formStatus = document.getElementById('formStatus');
+            formStatus.style.display = 'block';
+            formStatus.innerHTML = '正在提交您的問題...';
+
+            emailjs.sendForm('service_za8o36i', 'template_p22yav2', form)
+                .then(function(response) {
+                    loadPage('thankYou');
+                }, function(error) {
+                    formStatus.innerHTML = '提交時發生錯誤，請稍後再試！';
+                });
+        });
+    }
+}
+    </script>
+
+  
+</body>
+
+</html>
