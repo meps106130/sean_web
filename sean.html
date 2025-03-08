@@ -183,17 +183,17 @@ form button:hover {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sean的專屬網頁</title>
+    <title>sean的個人網頁</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1 id="flashingTitle">sean的專屬網頁</h1>
-        <p>探索我的世界：編程、遊戲與創意</p>
+        <h1 id="flashingTitle">sean的個人網頁</h1>
+        <p>探索我的世界：程式、遊戲與創意</p>
         <button id="nightModeButton" onclick="toggleNightMode()">切換夜間模式</button>
         <select id="languageSelect" onchange="changeLanguage(this)">
-            <option value="zh-Hant">繁體中文</option>
-            <option value="en">English</option>
+            <option value="zh-Hant">繁體中文(chinese)</option>
+            <option value="en">英文(English)</option>
         </select>
     </header>
 
@@ -211,7 +211,7 @@ form button:hover {
     </main>
 
     <footer>
-        <p>&copy; 2024 sean | 專屬網頁</p>
+        <p>&copy; 2025 sean | 個人網頁</p>
     </footer>
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -268,6 +268,14 @@ function changeLanguage(selectElement) {
                 <li><strong>Birthday:</strong> February 23, 2011</li>
                 <li><strong>Programming Languages:</strong> Python, C, C++, HTML, CSS, JavaScript (not very good)</li>
             </ul>
+            <h2>Certifications/Competitions</h2>    
+            <ul>
+                <li>APCS : 4+3</li>
+                <li>2023: YTP Preliminary round NO.8</li>
+                <li>2024: YTP final NO.8</li> 
+                <a href="https://apcs.csie.ntnu.edu.tw/">APCS</a>
+            </ul>
+            
         `;
         pages.contact = `
             <h2>Contact Me</h2>
@@ -314,6 +322,13 @@ function changeLanguage(selectElement) {
                 <li><strong>生日：</strong>2011年2月23日</li>
                 <li><strong>會寫的程式語言：</strong>Python、C、C++、HTML、CSS、JavaScript（不太厲害）</li>
             </ul>
+            <h2>檢定/競賽</h2>    
+            <ul>
+                <li>APCS : 4+3</li>
+                <li>2023: YTP 初賽第8</li>
+                <li>2024: YTP 決賽第14</li> 
+                <a href="https://apcs.csie.ntnu.edu.tw/">APCS</a>
+            </ul>
         `;
         pages.contact = `
             <h2>如何聯絡我</h2>
@@ -358,6 +373,13 @@ const pages = {
             <li><strong>興趣：</strong>寫程式、看書、打遊戲</li>
             <li><strong>生日：</strong>2011年2月23日</li>
             <li><strong>會寫的程式語言：</strong>Python、C、C++、HTML、CSS、JavaScript（不太厲害）</li>
+        </ul>
+        <h2>檢定/競賽</h2>    
+        <ul>
+            <li>APCS : 4+3</li>
+            <li>2023: YTP 初賽第8</li>
+            <li>2024: YTP 決賽第14</li> 
+            <a href="https://apcs.csie.ntnu.edu.tw/">APCS</a>
         </ul>
     `,
     contact: `
